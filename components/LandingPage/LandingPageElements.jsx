@@ -1,41 +1,18 @@
 import styled from 'styled-components';
-import Link from 'next/link';
-
-export const LandingWrapper = styled.div`
-  height: 100vh;
-  width: 100vw;
-  background-color: #abdcb4;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-export const NavContainer = styled.div`
-  height: 134px;
-  padding-top: 12px;
-`;
-
-export const Nav = styled.ul`
-  height: 100%;
-  margin: 0 auto;
-`;
-
-export const NavItem = styled.li`
-  display: inline;
-  margin: 0 72px;
-`;
-
-export const NavLink = styled(Link)`
-  text-decoration: none;
-`;
 
 export const LandingContainer = styled.div`
   display: flex;
   align-items: space-between;
+  justify-content: center;
+  height: 90vh;
+  width: 100%;
+  padding-top: 48px;
+  background-color: #abdcb4;
 `;
 
 export const LogoContainer = styled.div`
   display: flex;
+  height: 450px;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
