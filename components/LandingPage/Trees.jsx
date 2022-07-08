@@ -56,8 +56,14 @@ const ImageContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border: 1px solid transparent;
+  margin-bottom: 20px;
+  cursor: pointer;
   p {
     text-align: center;
+  }
+  :hover {
+    border: 1px solid blue;
   }
 `;
 
