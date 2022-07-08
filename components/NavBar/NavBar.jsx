@@ -36,7 +36,7 @@ export default function NavBar() {
 export const NavContainer = styled.div`
   /* padding: 10px; */
   width: 100vw;
-  /* height: 186px; */
+  height: 80px;
   background-image: url("./banner.png");
   background-position: center;
   background-repeat: no-repeat;
