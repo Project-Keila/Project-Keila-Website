@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Button from "../Button/Button";
 
 export default function About() {
   return (
@@ -88,6 +89,9 @@ export default function About() {
             and Ethereum.
           </p>
         </Methodology>
+        <FlexCenter>
+          <Button title="Use Calculator" />
+        </FlexCenter>
       </Container>
     </>
   );
@@ -118,4 +122,9 @@ const Methodology = styled.div`
   h2 {
     text-align: center;
   }
+`;
+
+const FlexCenter = styled.div`
+  display: flex;
+  justify-content: center;
 `;

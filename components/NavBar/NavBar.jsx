@@ -23,7 +23,7 @@ export default function NavBar() {
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="/roadmap">
+          <NavLink href="/partners">
             <a>Partners</a>
           </NavLink>
         </NavItem>
@@ -36,7 +36,7 @@ export default function NavBar() {
 export const NavContainer = styled.div`
   /* padding: 10px; */
   width: 100vw;
-  height: 80px;
+  height: 70px;
   background-image: url("./banner.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -47,7 +47,7 @@ export const NavContainer = styled.div`
 `;
 
 const LogoImg = styled.img`
-  width: 100px;
+  width: 90px;
 `;
 
 const Links = styled.div`
