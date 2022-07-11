@@ -77,13 +77,13 @@ const Approach = styled.div`
   background: white;
   position: absolute;
   bottom: -100px;
-  right: 30vw;
-  width: 40vw;
+  right: 32vw;
+  width: 36vw;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   h2,
   p {
     text-align: center;
-    padding: 0px 10px 10px 10px;
+    padding: 0px 30px 10px 30px;
   }
 `;

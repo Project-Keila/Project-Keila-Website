@@ -40,7 +40,7 @@ const Features = () => {
       </FeatureCards>
       <h3>Read. Interact. Collaborate</h3>
       <Options>
-        <Option src="./features/methodology.png" linkTitle="Methodology" />
+        <Option src="./features/methodology.png" linkTitle="About us" />
         <Option src="./features/calculator.png" linkTitle="Calculator" />
         <Option src="./features/partner.png" linkTitle="Partner With Us" />
       </Options>
