@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import styled from "styled-components";
 import Footer from "./Footer/Footer";
 import NavBar from "./NavBar/NavBar";
@@ -10,9 +11,10 @@ const Container = styled.div`
 `;
 
 export function Layout({ children }) {
+  const router = useRouter();
   return (
     <Container>
-      <NavBar />
+      <NavBar isLanding={router.pathname === "/"} />
       {children}
       <Footer />
     </Container>
