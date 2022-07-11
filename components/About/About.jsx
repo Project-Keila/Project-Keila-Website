@@ -40,7 +40,7 @@ export default function About() {
           carbon offset. More specifically, it is owned and verifiable.
         </p>
 
-        <Methodology>
+        {/* <Methodology>
           <h2>Methodology</h2>
           <p>
             Our methodology builds upon four steps to generate data on the
@@ -88,7 +88,7 @@ export default function About() {
             other PoS networks and also other cryptocurrencies such as Bitcoin
             and Ethereum.
           </p>
-        </Methodology>
+        </Methodology> */}
         <FlexCenter>
           <Button title="Use Calculator" />
         </FlexCenter>

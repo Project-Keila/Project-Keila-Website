@@ -48,6 +48,7 @@ const H1 = styled.h1`
 const H2 = styled.h1`
   color: white;
   font-size: 6vw;
+  /* margin-top: -50px; */
 `;
 
 const Intro = styled.div``;
@@ -76,14 +77,18 @@ const Blocks = styled.img`
 const Approach = styled.div`
   background: white;
   position: absolute;
-  bottom: -100px;
-  right: 30vw;
-  width: 40vw;
+  bottom: -50px;
+  right: 32vw;
+  width: 36vw;
+  @media (max-width: 768px) {
+    width: 70vw;
+    right: 15vw;
+  }
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   h2,
   p {
     text-align: center;
-    padding: 0px 10px 10px 10px;
+    padding: 0px 30px 10px 30px;
   }
 `;

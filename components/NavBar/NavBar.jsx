@@ -2,9 +2,9 @@ import styled from "styled-components";
 import Link from "next/link";
 import Button from "../Button/Button";
 
-export default function NavBar() {
+export default function NavBar({ isLanding }) {
   return (
-    <NavContainer>
+    <NavContainer isLanding={isLanding}>
       <LogoImg src="logo.png" />
       <Links>
         <NavItem>
@@ -36,11 +36,16 @@ export default function NavBar() {
 export const NavContainer = styled.div`
   /* padding: 10px; */
   width: 100vw;
+  position: ${(props) => (props.isLanding ? "absolute" : "relative")};
   height: 70px;
-  background-image: url("./banner.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  z-index: 100;
+  top: 0px;
+  background-image: ${(props) =>
+    props.isLanding ? "url('')" : "url('./banner.png')"} !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background: transparent;
   display: flex;
   justify-content: space-between;
   align-items: center;
