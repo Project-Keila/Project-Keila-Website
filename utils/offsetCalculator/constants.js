@@ -1,0 +1,12 @@
+export const COAL = "coal";
+export const BIOMASS_COFIRING = "biomass_cofiring";
+export const NATURAL_GAS = "natural_gas";
+export const BIOMASS = "biomass";
+export const SOLAR_UTILITY = "solar_utility";
+export const SOLAR_ROOF = "solar_roof";
+export const GEOTHERMAL = "geothermal";
+export const SOLAR_CONCENTRATED = "solar_concentrated";
+export const HYDROPOWER = "hydropower";
+export const NUCLEAR = "nuclear";
+export const WIND_ONSHORE = "wind_onshore";
+export const WIND_OFFSHORE = "wind_offshore";
