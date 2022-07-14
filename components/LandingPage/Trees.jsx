@@ -49,6 +49,7 @@ const Headings = styled.div`
 const TreeImages = styled.div`
   display: flex;
   justify-content: space-around;
+  margin-top: 50px;
 `;
 
 const ImageContainer = styled.div`
@@ -90,6 +91,9 @@ const TreeBg = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  margin-top: 80px;
+  margin-bottom: 50px;
 
   h1 {
     color: #ffb000;

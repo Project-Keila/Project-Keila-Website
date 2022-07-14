@@ -1,11 +1,14 @@
 import styled from "styled-components";
 import Link from "next/link";
 import Button from "../Button/Button";
+import HambrgerMenu from "./HambrgerMenu";
+import { useRouter } from "next/router";
 
 export default function NavBar({ isLanding }) {
+  const router = useRouter();
   return (
     <NavContainer isLanding={isLanding}>
-      <LogoImg src="logo.png" />
+      <LogoImg onClick={() => router.push("/")} src="logo.png" />
       <Links>
         <NavItem>
           <NavLink href="/">
@@ -28,13 +31,16 @@ export default function NavBar({ isLanding }) {
           </NavLink>
         </NavItem>
       </Links>
-      <Button title="Connect" />
+      <BtnDiv>
+        <Button title="Connect" />
+      </BtnDiv>
+      <HambrgerMenu />
     </NavContainer>
   );
 }
 
 export const NavContainer = styled.div`
-  /* padding: 10px; */
+  padding: 0px 20px;
   width: 100vw;
   position: ${(props) => (props.isLanding ? "absolute" : "relative")};
   height: 70px;
@@ -53,12 +59,16 @@ export const NavContainer = styled.div`
 
 const LogoImg = styled.img`
   width: 90px;
+  cursor: pointer;
 `;
 
 const Links = styled.div`
   flex: 1;
   display: flex;
   justify-content: space-around;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const NavItem = styled.div`
@@ -70,4 +80,10 @@ export const NavItem = styled.div`
 
 export const NavLink = styled(Link)`
   text-decoration: none;
+`;
+
+const BtnDiv = styled.div`
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
