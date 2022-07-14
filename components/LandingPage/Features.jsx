@@ -58,6 +58,8 @@ const Container = styled.div`
     font-weight: 300;
     font-size: 22px;
     padding-top: 15px;
+    margin-top: 80px;
+    margin-bottom: 90px;
   }
 `;
 
