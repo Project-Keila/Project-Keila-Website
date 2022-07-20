@@ -65,7 +65,7 @@ const Container = styled.div`
 
 const Impact = styled.div`
   /* background: red; */
-  width: 100vw;
+  width: calc(100vw - 18px);;
   padding: 50px 7vw;
   p {
     width: 30vw;

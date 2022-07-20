@@ -98,7 +98,7 @@ export default function About() {
 }
 
 const Container = styled.div`
-  width: 100vw;
+  width: calc(100vw - 18px);;
   padding: 2vh 5vw;
 `;
 
@@ -111,7 +111,7 @@ const Flex = styled.div`
   }
 `;
 const Banner = styled.img`
-  width: 100vw;
+  width: calc(100vw - 18px);;
 `;
 
 const Image = styled.img`

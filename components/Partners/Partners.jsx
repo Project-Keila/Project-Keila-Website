@@ -59,7 +59,7 @@ const Container = styled.div`
 `;
 
 const Banner = styled.img`
-  width: 100vw;
+  width: calc(100vw - 18px);;
 `;
 
 const PartnerList = styled.div`
