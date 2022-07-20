@@ -1,6 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 
+const Tree = ({ src, title }) => {
+  const [isGif, setIsGif] = React.useState(false);
+  return (
+    <ImageContainer>
+      <TreeImage
+        onMouseEnter={() => setIsGif(true)}
+        onMouseLeave={() => setIsGif(false)}
+        src={`./trees/${src}.${isGif ? "gif" : "png"}`}
+      />
+      <p>{title}</p>
+    </ImageContainer>
+  );
+};
+
 const Trees = () => {
   return (
     <Container>
@@ -10,18 +24,9 @@ const Trees = () => {
         <h3>Plant a Tree</h3>
       </Headings>
       <TreeImages>
-        <ImageContainer>
-          <TreeImage src="./trees/apple-tree.png" />
-          <p>Apple Tree</p>
-        </ImageContainer>
-        <ImageContainer>
-          <TreeImage src="./trees/conifer-tree.png" />
-          <p>Conifer Tree</p>
-        </ImageContainer>
-        <ImageContainer>
-          <TreeImage src="./trees/poplar-tree.png" />
-          <p>Poplar Tree</p>
-        </ImageContainer>
+        <Tree src="apple-tree" title="Apple Tree" />
+        <Tree src="conifer-tree" title="Conifer Tree" />
+        <Tree src="poplar-tree" title="Poplar Tree" />
       </TreeImages>
       <TreeBg>
         <h1>Mint.Plant.Grow</h1>
@@ -50,6 +55,7 @@ const TreeImages = styled.div`
   display: flex;
   justify-content: space-around;
   margin-top: 50px;
+  flex-wrap: wrap;
 `;
 
 const ImageContainer = styled.div`
@@ -58,6 +64,12 @@ const ImageContainer = styled.div`
   align-items: center;
   justify-content: center;
   border: 1px solid transparent;
+
+  height: 500px;
+
+  @media (max-width: 768px) {
+    height: 400px;
+  }
   margin-bottom: 20px;
   cursor: pointer;
   p {
@@ -70,6 +82,7 @@ const ImageContainer = styled.div`
 
 const TreeImage = styled.img`
   width: 30vw;
+  min-width: 300px;
   flex: 1;
 `;
 

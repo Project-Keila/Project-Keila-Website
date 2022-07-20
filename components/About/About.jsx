@@ -1,17 +1,18 @@
 import styled from "styled-components";
+import Banner from "../Banner/Banner";
 import Button from "../Button/Button";
 
 export default function About() {
   return (
-    <>
-      <Banner src="./about/about-banner.png" />
+    <Background>
+      {/* <Banner src="./about/about-banner.png" /> */}
 
       <Container>
-        <h3>About Project Keila</h3>
-        <h4>
-          Toucan exists to help us rapidly coordinate a response to our species’
-          greatest challenge.
-        </h4>
+        <h1>About Project Keila</h1>
+        <h2>
+          An information-driven social impact platform that provides new
+          eco-dynamic omni-chain products to combat climate change
+        </h2>
         <Flex>
           <p>
             Project Keila is reimagining of carbon offsetting. No more will
@@ -92,30 +93,47 @@ export default function About() {
         <FlexCenter>
           <Button title="Use Calculator" />
         </FlexCenter>
+
+        <TextCenter>Powered by Project Keila</TextCenter>
       </Container>
-    </>
+    </Background>
   );
 }
 
-const Container = styled.div`
+const Background = styled.div`
+  background-image: url("./about/about-banner.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 100vw;
+  padding: 10vh;
+`;
+
+const Container = styled.div`
   padding: 2vh 5vw;
+  background: white;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.8;
+  width: 90vw;
+  h1,
+  h2 {
+    text-align: center;
+  }
 `;
 
 const Flex = styled.div`
   display: flex;
   justify-content: space-between;
   p {
-    text-align: center;
-    width: 50vw;
+    width: 30vw;
+    padding-top: 10vh;
+    font-size: 16px;
   }
-`;
-const Banner = styled.img`
-  width: 100vw;
 `;
 
 const Image = styled.img`
-  width: 40vw;
+  width: 55vw;
 `;
 
 const Methodology = styled.div`
@@ -127,4 +145,9 @@ const Methodology = styled.div`
 const FlexCenter = styled.div`
   display: flex;
   justify-content: center;
+`;
+
+const TextCenter = styled.p`
+  margin-top: 15vh;
+  text-align: center;
 `;

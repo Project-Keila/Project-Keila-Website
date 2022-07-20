@@ -8,8 +8,8 @@ export function LandingPage() {
     <>
       <LandingContainer>
         <Intro>
-          <H1>NFTs that live</H1>
-          <H2>On-Chain</H2>
+          <H1>World&apos;s First Living</H1>
+          <H2>NFT</H2>
           <Button title="Plant Tree" />
         </Intro>
         <Blocks src="./blocks.png" />
@@ -48,7 +48,6 @@ const H1 = styled.h1`
 const H2 = styled.h1`
   color: white;
   font-size: 6vw;
-  /* margin-top: -50px; */
 `;
 
 const Intro = styled.div``;

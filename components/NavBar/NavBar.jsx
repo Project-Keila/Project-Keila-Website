@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Link from "next/link";
 import Button from "../Button/Button";
-import HambrgerMenu from "./HambrgerMenu";
+import HambrgerMenu from "./HamburgerMenu";
 import { useRouter } from "next/router";
 
 export default function NavBar({ isLanding }) {
@@ -16,7 +16,7 @@ export default function NavBar({ isLanding }) {
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="/offset-calculator">
+          <NavLink href="/calculator">
             <a>Calculator</a>
           </NavLink>
         </NavItem>
