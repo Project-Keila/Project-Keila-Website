@@ -1,9 +1,13 @@
+import { useRouter } from "next/router";
 import React from "react";
 import styled from "styled-components";
 
 const Footer = () => {
+  const router = useRouter();
   return (
-    <Container>
+    <Container
+      isOpen={router.pathname !== "/about" && router.pathname !== "/partners"}
+    >
       <h4>Powered By Project Keila</h4>
     </Container>
   );
@@ -19,6 +23,7 @@ const Container = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  display: ${(props) => (props.isOpen ? "block" : "none")};
 
   h4 {
     position: absolute;
