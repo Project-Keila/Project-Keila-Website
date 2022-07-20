@@ -50,7 +50,7 @@ const Background = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100vw;
+  width: calc(100vw - 18px);
 `;
 
 const Container = styled.div`
