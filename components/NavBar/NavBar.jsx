@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Link from "next/link";
 import Button from "../Button/Button";
-import HambrgerMenu from "./HambrgerMenu";
+import HambrgerMenu from "./HamburgerMenu";
 import { useRouter } from "next/router";
 import Web3 from "web3";
 import Web3Modal from "web3modal";
@@ -88,7 +88,7 @@ export default function NavBar({ isLanding }) {
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="/offset-calculator">
+          <NavLink href="/calculator">
             <a>Calculator</a>
           </NavLink>
         </NavItem>

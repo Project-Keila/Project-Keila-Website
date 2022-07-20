@@ -1,9 +1,11 @@
+import { useRouter } from "next/router";
 import React from "react";
 import styled from "styled-components";
 import FeatureCard from "./FeatureCard";
 import Option from "./Option";
 
 const Features = () => {
+  const router = useRouter();
   return (
     <Container>
       <Impact>
@@ -40,9 +42,21 @@ const Features = () => {
       </FeatureCards>
       <h3>Read. Interact. Collaborate</h3>
       <Options>
-        <Option src="./features/methodology.png" linkTitle="About us" />
-        <Option src="./features/calculator.png" linkTitle="Calculator" />
-        <Option src="./features/partner.png" linkTitle="Partner With Us" />
+        <Option
+          onClick={() => router.push("/about")}
+          src="./features/methodology.png"
+          linkTitle="About us"
+        />
+        <Option
+          onClick={() => router.push("/calculator")}
+          src="./features/calculator.png"
+          linkTitle="Calculator"
+        />
+        <Option
+          onClick={() => router.push("/partners")}
+          src="./features/partner.png"
+          linkTitle="Partner With Us"
+        />
       </Options>
     </Container>
   );

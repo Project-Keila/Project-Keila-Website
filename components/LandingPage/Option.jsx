@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-const Option = ({ linkTitle, src }) => {
+const Option = ({ linkTitle, src, onClick }) => {
   return (
-    <Container>
+    <Container onClick={onClick}>
       <OptionImage src={src} />
       <OptionLink>
         {linkTitle}
