@@ -1,12 +1,9 @@
 import styled from "styled-components";
-import Banner from "../Banner/Banner";
 import Button from "../Button/Button";
 
 export default function About() {
   return (
     <Background>
-      {/* <Banner src="./about/about-banner.png" /> */}
-
       <Container>
         <h1>About Project Keila</h1>
         <h2>
@@ -106,16 +103,16 @@ const Background = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   width: 100vw;
-  padding: 10vh;
 `;
 
 const Container = styled.div`
-  padding: 2vh 5vw;
   background: white;
-  margin-left: auto;
-  margin-right: auto;
+  padding: 10vh;
+  margin: 10vh;
   opacity: 0.8;
   width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
   h1,
   h2 {
     text-align: center;
@@ -125,15 +122,26 @@ const Container = styled.div`
 const Flex = styled.div`
   display: flex;
   justify-content: space-between;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
   p {
-    width: 30vw;
+    width: 20vw;
     padding-top: 10vh;
     font-size: 16px;
+    @media (max-width: 768px) {
+      width: 70vw;
+      text-align: center;
+    }
   }
 `;
 
 const Image = styled.img`
-  width: 55vw;
+  width: 50vw;
+
+  @media (max-width: 768px) {
+    width: 70vw;
+  }
 `;
 
 const Methodology = styled.div`
