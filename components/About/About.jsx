@@ -102,7 +102,7 @@ const Background = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: calc(100vw - 18px);
+  width: 100vw;
 `;
 
 const Container = styled.div`
@@ -137,7 +137,7 @@ const Flex = styled.div`
 `;
 
 const Banner = styled.img`
-  width: calc(100vw - 18px);;
+  width: 100vw;
 `;
 
 const Image = styled.img`

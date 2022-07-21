@@ -120,7 +120,7 @@ export default function NavBar({ isLanding }) {
 
 export const NavContainer = styled.div`
   padding: 0px 20px;
-  width: calc(100vw - 18px);
+  width: 100vw;
   position: ${(props) => (props.isLanding ? "absolute" : "relative")};
   height: 70px;
   z-index: 100;

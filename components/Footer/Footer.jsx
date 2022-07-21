@@ -17,7 +17,7 @@ export default Footer;
 
 const Container = styled.div`
   background-image: url("./footer-bg.png");
-  width: calc(100vw - 18px);;
+  width: 100vw;
   height: 40vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -30,7 +30,7 @@ const Container = styled.div`
     bottom: 40px;
     z-index: 10;
     text-align: center;
-    width: calc(100vw - 18px);;
+    width: 100vw;
     /* height: 100%; */
   }
 `;

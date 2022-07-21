@@ -44,7 +44,7 @@ export default Roadmap;
 
 const BackgroundContainer = styled.div`
   background-image: url("./roadmap-bg.png");
-  width: calc(100vw - 18px);;
+  width: 100vw;
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;

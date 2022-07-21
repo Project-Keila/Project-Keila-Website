@@ -87,7 +87,7 @@ const TreeImage = styled.img`
 `;
 
 const ShadowImg = styled.img`
-  width: calc(100vw - 18px);;
+  width: 100vw;
   position: absolute;
   z-index: -1;
   margin-left: auto;
