@@ -8,7 +8,8 @@ import Web3 from "web3";
 import Web3Modal from "web3modal";
 import { ethers, providers } from "ethers";
 import { providerOptions } from "../../utils/utils";
-import { CHAIN_ID, NETWORK } from "../../config";
+import { errorAlertCenter } from "../../utils/toastGroup";
+import { CHAIN_ID, NETWORK, SITE_ERROR } from "../../config";
 
 let web3Modal = undefined;
 let contract = undefined;

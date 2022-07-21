@@ -98,9 +98,7 @@ export default function About() {
 }
 
 const Background = styled.div`
-  background-image: url("./about/about-
-  
-  .png");
+  background-image: url("./about/about-banner.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -112,7 +110,7 @@ const Container = styled.div`
   padding: 10vh;
   margin: 10vh;
   opacity: 0.8;
-  width: calc(100vw - 18px);
+  width: 90vw;
   margin-left: auto;
   margin-right: auto;
   h1,
