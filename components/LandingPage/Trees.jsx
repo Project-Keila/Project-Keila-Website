@@ -95,7 +95,7 @@ const ShadowImg = styled.img`
 `;
 
 const TreeBg = styled.div`
-  width: calc(100vw - 18px);;
+  width: calc(100vw - 17px);;
   height: 50vh;
   background-image: url("./trees/trees-bg.png");
   background-position: center;
