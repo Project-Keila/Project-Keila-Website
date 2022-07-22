@@ -20,6 +20,9 @@ const Container = styled.div`
   p {
     font-weight: 300;
     color: #444444;
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
   }
 `;
 
@@ -28,8 +31,6 @@ const ImageContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   img {
-    /* flex: 1; */
-    /* background: red; */
     height: 140px;
     object-fit: contain;
   }

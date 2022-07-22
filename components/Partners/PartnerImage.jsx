@@ -14,7 +14,7 @@ export default PartnerImage;
 
 const ImageContainer = styled.div`
   min-width: 250px;
-  width: 30vw;
+  width: 20vw;
   display: flex;
   flex-direction: column;
   align-items: center;

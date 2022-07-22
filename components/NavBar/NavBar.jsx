@@ -22,62 +22,62 @@ export default function NavBar({ isLanding }) {
 
   const connectWallet = async () => {
     if (await checkNetwork()) {
-      setLoading(true)
+      setLoading(true);
       web3Modal = new Web3Modal({
         network: NETWORK, // optional
         cacheProvider: true,
         providerOptions, // required
-      })
-      const provider = await web3Modal.connect()
-      const web3Provider = new providers.Web3Provider(provider)
+      });
+      const provider = await web3Modal.connect();
+      const web3Provider = new providers.Web3Provider(provider);
 
-      const signer = web3Provider.getSigner()
-      const address = await signer.getAddress()
+      const signer = web3Provider.getSigner();
+      const address = await signer.getAddress();
 
-      setConnected(true)
-      setSignerAddress(address)
+      setConnected(true);
+      setSignerAddress(address);
 
       // Subscribe to accounts change
       provider.on("accountsChanged", (accounts) => {
-        console.log(accounts[0], '--------------')
-      })
+        console.log(accounts[0], "--------------");
+      });
     }
-  }
+  };
 
   const checkNetwork = async () => {
-    const web3 = new Web3(Web3.givenProvider)
-    const chainId = await web3.eth.getChainId()
+    const web3 = new Web3(Web3.givenProvider);
+    const chainId = await web3.eth.getChainId();
     if (chainId === CHAIN_ID) {
-      return true
+      return true;
     } else {
-      errorAlertCenter(SITE_ERROR[0])
-      return false
+      errorAlertCenter(SITE_ERROR[0]);
+      return false;
     }
-  }
+  };
 
   useEffect(() => {
     async function fetchData() {
-      if (typeof window.ethereum !== 'undefined') {
+      if (typeof window.ethereum !== "undefined") {
         if (await checkNetwork()) {
-          await connectWallet()
-          ethereum.on('accountsChanged', function (accounts) {
-            window.location.reload()
-          })
+          await connectWallet();
+          ethereum.on("accountsChanged", function (accounts) {
+            window.location.reload();
+          });
           if (ethereum.selectedAddress !== null) {
-            setSignerAddress(ethereum.selectedAddress)
-            setConnected(true)
+            setSignerAddress(ethereum.selectedAddress);
+            setConnected(true);
           }
-          ethereum.on('chainChanged', (chainId) => {
-            checkNetwork()
-          })
+          ethereum.on("chainChanged", (chainId) => {
+            checkNetwork();
+          });
         }
       } else {
-        errorAlertCenter(SITE_ERROR[1])
+        errorAlertCenter(SITE_ERROR[1]);
       }
     }
-    fetchData()
+    fetchData();
     // eslint-disable-next-line
-  }, [])
+  }, []);
 
   return (
     <NavContainer isLanding={isLanding}>
@@ -105,13 +105,19 @@ export default function NavBar({ isLanding }) {
         </NavItem>
       </Links>
       <BtnDiv onClick={() => connectWallet()}>
-          {!connected ?
-            <>
-              <Button title="Wallet connect"></Button>
-            </>
-            :
-            <Button title={`0x${signerAddress.slice(2, 5)}...${signerAddress.slice(-5)}`}></Button>
-          }
+        {!connected ? (
+          <>
+            <Button title="Connect Wallet"></Button>
+          </>
+        ) : (
+          <Button
+            title={
+              signerAddress
+                ? `0x${signerAddress.slice(2, 5)}...${signerAddress.slice(-5)}`
+                : "Connect Wallet"
+            }
+          ></Button>
+        )}
       </BtnDiv>
       <HambrgerMenu />
     </NavContainer>
