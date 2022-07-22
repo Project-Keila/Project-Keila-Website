@@ -78,11 +78,14 @@ const Container = styled.div`
 `;
 
 const Impact = styled.div`
-  /* background: red; */
   width: 100vw;
   padding: 50px 7vw;
   p {
     width: 30vw;
+
+    @media (max-width: 768px) {
+      width: 60vw;
+    }
   }
 `;
 

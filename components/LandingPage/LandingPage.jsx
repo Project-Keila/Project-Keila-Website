@@ -8,20 +8,21 @@ export function LandingPage() {
     <>
       <LandingContainer>
         <Intro>
-          <H1>World&apos;s First Living</H1>
-          <H2>NFT</H2>
+          <H1>World&apos;s First Living NFT</H1>
+          <LandingTree src="./landing-tree.png" />
+          <br />
           <Button title="Plant Tree" />
+
+          <Approach>
+            <h2>Our Approach</h2>
+            <p>
+              Project Keila’s team is building the world’s first living NFT by
+              creating digital twins for trees and allowing the NFTs to serve as
+              Proof of Ownership. We aim to plant trees to offset carbon
+              negative emission footprints globally using Blockchain technology.
+            </p>
+          </Approach>
         </Intro>
-        <Blocks src="./blocks.png" />
-        <Approach>
-          <h2>Our Approach</h2>
-          <p>
-            Project Keila’s team is building the world’s first living NFT by
-            creating digital twins for trees and allowing the NFTs to serve as
-            Proof of Ownership. We aim to plant trees to offset carbon negative
-            emission footprints globally using Blockchain technology.
-          </p>
-        </Approach>
       </LandingContainer>
       <Trees />
       <Features />
@@ -34,23 +35,30 @@ const LandingContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   height: 90vh;
+  @media (max-width: 968px) {
+    height: 70vh;
+  }
   width: 100%;
   padding: 48px;
-  background-image: url("./banner.png");
+  background-image: url("./banner.gif");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 `;
-const H1 = styled.h1`
-  color: #ffb000;
-  font-size: 6vw;
-`;
-const H2 = styled.h1`
-  color: white;
-  font-size: 6vw;
-`;
 
-const Intro = styled.div``;
+const Intro = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  position: relative;
+`;
+const H1 = styled.h1`
+  color: white;
+  text-align: center;
+  font-size: 5vw;
+`;
 
 export const PlantButton = styled.button`
   height: 72px;
@@ -69,19 +77,26 @@ export const Logo = styled.img`
   width: 408px;
 `;
 
-const Blocks = styled.img`
-  width: 40vw;
+const LandingTree = styled.img`
+  width: 200px;
+
+  @media (max-width: 768px) {
+    width: 140px;
+  }
 `;
 
 const Approach = styled.div`
   background: white;
   position: absolute;
-  bottom: -50px;
-  right: 32vw;
+  bottom: -32vh;
   width: 36vw;
-  @media (max-width: 768px) {
-    width: 70vw;
-    right: 15vw;
+  font-size: 14px;
+  @media (max-width: 968px) {
+    width: 60vw;
+    font-size: 12px;
+  }
+  @media (max-width: 468px) {
+    width: 80vw;
   }
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;

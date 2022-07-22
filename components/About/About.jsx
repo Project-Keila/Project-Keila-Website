@@ -136,6 +136,10 @@ const Flex = styled.div`
   }
 `;
 
+const Banner = styled.img`
+  width: 100vw;
+`;
+
 const Image = styled.img`
   width: 50vw;
 

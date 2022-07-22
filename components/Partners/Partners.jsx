@@ -77,6 +77,10 @@ const Container = styled.div`
   }
 `;
 
+const Banner = styled.img`
+  width: 100vw;
+`;
+
 const PartnerList = styled.div`
   display: flex;
   justify-content: space-around;
