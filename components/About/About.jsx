@@ -1,7 +1,9 @@
+import { useRouter } from "next/router";
 import styled from "styled-components";
 import Button from "../Button/Button";
 
 export default function About() {
+  const router = useRouter();
   return (
     <Background>
       <Container>
@@ -38,57 +40,11 @@ export default function About() {
           carbon offset. More specifically, it is owned and verifiable.
         </p>
 
-        {/* <Methodology>
-          <h2>Methodology</h2>
-          <p>
-            Our methodology builds upon four steps to generate data on the
-            electricity consumption and carbon footprint of PoS-systems and
-            additional data to develop metrics for a valid comparison between
-            the systems.
-          </p>
-          <p>
-            In the first step, we analyze the selected PoS-systems and their
-            minimum hardware requirements. The hardware requirements are an
-            indicator of the hardware composition of the network. We use this
-            information and additional hardware data from PassMark to select and
-            obtain hardware that we use to measure a single node&apos;s
-            electricity consumption.
-          </p>
-          <p>
-            In the second step, we estimate the electricity usage of a single
-            node and provide upper and lower bounds for the networks. We start
-            by running the software on all obtained hardware devices and measure
-            their single electricity consumption while running the network and
-            while idling. We also measure other data points to be able to
-            evaluate additional metrics. These values allow us to produce
-            reasonable upper and lower bounds for running a single node, as our
-            hardware is selected accordingly.
-          </p>
-
-          <p>
-            In the third step, we estimate the electricity consumption of the
-            complete network. Firstly, we collect information about the size of
-            the network, as the node count significantly influences the amount
-            of electricity consumed. Secondly, we develop a weighting between
-            the single hardware devices for each network. Lastly, we multiply
-            the electricity consumption of the weighed nodes by the number of
-            nodes in the network. In case the distribution of nodes for all
-            networks is available, we use the respective carbon intensity
-            factors of the regions to calculate the carbon footprint of the
-            respective network. Otherwise, we rely on an average global carbon
-            intensity factor.
-          </p>
-          <p>
-            In the fourth step, we analyze the additional data (such as
-            transaction data) to develop additional metrics to explore energy
-            efficiency in transaction throughput. This allows us to put the
-            electricity consumption of single networks into perspective with
-            other PoS networks and also other cryptocurrencies such as Bitcoin
-            and Ethereum.
-          </p>
-        </Methodology> */}
         <FlexCenter>
-          <Button title="Use Calculator" />
+          <Button
+            onClick={() => router.push("/calculator")}
+            title="Use Calculator"
+          />
         </FlexCenter>
 
         <TextCenter>Powered by Project Keila</TextCenter>
@@ -157,6 +113,7 @@ const Methodology = styled.div`
 const FlexCenter = styled.div`
   display: flex;
   justify-content: center;
+  z-index: 100;
 `;
 
 const TextCenter = styled.p`
