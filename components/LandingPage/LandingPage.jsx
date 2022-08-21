@@ -1,9 +1,11 @@
+import { useRouter } from "next/router";
 import styled from "styled-components";
 import Button from "../Button/Button";
 import Features from "./Features";
 import Trees from "./Trees";
 
 export function LandingPage() {
+  const router = useRouter();
   return (
     <>
       <LandingContainer>
@@ -11,7 +13,10 @@ export function LandingPage() {
           <H1>World&apos;s First Living NFT</H1>
           <LandingTree src="./landing-tree.png" />
           <br />
-          <Button title="Plant Tree" />
+          <Button
+            onClick={() => router.push("/calculator")}
+            title="Plant Tree"
+          />
 
           <Approach>
             <h2>Our Approach</h2>

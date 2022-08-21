@@ -28,9 +28,7 @@ const Container = styled.div`
   h4 {
     position: absolute;
     bottom: 40px;
-    z-index: 10;
     text-align: center;
     width: 100vw;
-    /* height: 100%; */
   }
 `;

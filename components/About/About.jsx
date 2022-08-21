@@ -110,7 +110,7 @@ const Methodology = styled.div`
   }
 `;
 
-const FlexCenter = styled.div`
+export const FlexCenter = styled.div`
   display: flex;
   justify-content: center;
   z-index: 100;
