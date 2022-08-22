@@ -117,8 +117,8 @@ const MintModal = ({ open, handleClose, modalData }) => {
       if (address) {
         setLoading(true);
         const data = await certificateContract.methods
-          .mint(data.metadata, web3.utils.toWei("0.200", "ether"))
-          .send({ from: address, value: web3.utils.toWei("0.200", "ether") });
+          .mint(data.metadata, web3.utils.toWei("200", "ether"))
+          .send({ from: address, value: web3.utils.toWei("200", "ether") });
         console.log(data);
       }
       setLoading(false);
