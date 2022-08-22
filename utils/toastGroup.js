@@ -1,8 +1,19 @@
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-import { toast } from "react-toastify"
-import "react-toastify/dist/ReactToastify.css"
+// export const errorAlert = (text) => {
+//   toast.error(text, {
+//     position: "top-right",
+//     autoClose: 5000,
+//     hideProgressBar: false,
+//     closeOnClick: true,
+//     pauseOnHover: true,
+//     draggable: true,
+//     theme: "colored",
+//   });
+// };
 
-export const errorAlert = (text) => {
+export const errorAlertCenter = (text) => {
   toast.error(text, {
     position: "top-right",
     autoClose: 5000,
@@ -10,21 +21,9 @@ export const errorAlert = (text) => {
     closeOnClick: true,
     pauseOnHover: true,
     draggable: true,
-    theme: "colored"
-  })
-}
-
-export const errorAlertCenter = (text) => {
-  toast.error(text, {
-    position: "top-center",
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    theme: "colored"
-  })
-}
+    theme: "colored",
+  });
+};
 
 export const warningAlert = (text) => {
   toast.warning(text, {
@@ -34,9 +33,9 @@ export const warningAlert = (text) => {
     closeOnClick: true,
     pauseOnHover: true,
     draggable: true,
-    theme: "colored"
-  })
-}
+    theme: "colored",
+  });
+};
 
 export const successAlert = (text, state) => {
   if (state) {
@@ -47,8 +46,8 @@ export const successAlert = (text, state) => {
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
-      theme: "colored"
-    })
+      theme: "colored",
+    });
   } else {
     toast.success(text, {
       position: "top-right",
@@ -57,10 +56,10 @@ export const successAlert = (text, state) => {
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
-      theme: "colored"
-    })
+      theme: "colored",
+    });
   }
-}
+};
 
 export const infoAlert = (text) => {
   toast.info(text, {
@@ -70,6 +69,6 @@ export const infoAlert = (text) => {
     closeOnClick: true,
     pauseOnHover: true,
     draggable: true,
-    theme: "colored"
-  })
-}
+    theme: "colored",
+  });
+};

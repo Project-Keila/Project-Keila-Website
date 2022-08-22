@@ -10,6 +10,7 @@ import { ethers, providers } from "ethers";
 import { providerOptions } from "../../utils/utils";
 import { errorAlertCenter } from "../../utils/toastGroup";
 import { CHAIN_ID, NETWORK, SITE_ERROR } from "../../config";
+import { ToastContainer } from "react-toastify";
 
 let web3Modal = undefined;
 let contract = undefined;
@@ -37,8 +38,11 @@ export default function NavBar({ isLanding }) {
       setConnected(true);
       setSignerAddress(address);
 
+      provider.on("networkChanged", (e) => console.log(e));
+
       // Subscribe to accounts change
       provider.on("accountsChanged", (accounts) => {
+        setSignerAddress(accounts[0]);
         console.log(accounts[0], "--------------");
       });
     }
@@ -47,6 +51,7 @@ export default function NavBar({ isLanding }) {
   const checkNetwork = async () => {
     const web3 = new Web3(Web3.givenProvider);
     const chainId = await web3.eth.getChainId();
+    console.log(chainId);
     if (chainId === CHAIN_ID) {
       return true;
     } else {
@@ -81,7 +86,17 @@ export default function NavBar({ isLanding }) {
 
   return (
     <NavContainer isLanding={isLanding}>
-      <LogoImg onClick={() => router.push("/")} src="logo.png" />
+      <ToastContainer
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={true}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+      <LogoImg onClick={() => router.push("/")} src="/logo.png" />
       <Links>
         <NavItem>
           <NavLink href="/">
@@ -132,7 +147,7 @@ export const NavContainer = styled.div`
   z-index: 100;
   top: 0px;
   background-image: ${(props) =>
-    props.isLanding ? "url('')" : "url('./banner.png')"} !important;
+    props.isLanding ? "url('')" : "url('/banner.png')"} !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;

@@ -1,4 +1,4 @@
-const energySources = {
+export const energySources = {
   COAL: 820,
   BIOMASS_COFIRING: 740,
   NATURAL_GAS: 490,
@@ -11,4 +11,11 @@ const energySources = {
   NUCLEAR: 12,
   WIND_ONSHORE: 11,
   WIND_OFFSHORE: 12,
+};
+
+export const fuelSources = {
+  PETROL: 120,
+  DIESEL: 132,
+  LPG: 83,
+  CNG: 113,
 };
