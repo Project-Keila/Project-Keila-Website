@@ -1,5 +1,5 @@
 import { sign } from "jsonwebtoken";
-import React from "react";
+import React, { useEffect } from "react";
 import Modal from "react-modal";
 import styled from "styled-components";
 import Web3 from "web3";
@@ -9,6 +9,7 @@ import { FlexCenter } from "../About/About";
 import Button from "../Button/Button";
 import certificateAbi from "../../abis/Certificate.json";
 import { CircularProgress } from "@mui/material";
+import { infoAlert } from "../../utils/toastGroup";
 
 const customStyles = {
   content: {
@@ -95,6 +96,7 @@ const MintModal = ({ open, handleClose, modalData }) => {
   const [name, setName] = React.useState("");
   const [loading, setLoading] = React.useState(false);
   // const [address, setAddress] = React.useState("");
+  const [scannerUrl, setScannerUrl] = React.useState();
 
   const web3 = new Web3(Web3.givenProvider);
   const mint = async () => {
@@ -113,24 +115,41 @@ const MintModal = ({ open, handleClose, modalData }) => {
         ),
       });
       setLoading(false);
-      console.log(data, address);
-      if (address) {
+      if (address && data) {
         setLoading(true);
-        const data = await certificateContract.methods
+        const mintData = await certificateContract.methods
           .mint(data.metadata, web3.utils.toWei("200", "ether"))
           .send({ from: address, value: web3.utils.toWei("200", "ether") });
-        console.log(data);
+        console.log(mintData);
+        setScannerUrl(
+          (prev) =>
+            `https://mumbai.polygonscan.com/tx/${mintData.transactionHash}`
+        );
       }
       setLoading(false);
     } catch (error) {
       console.log(error);
       alert("Oops! Something went wrong!");
+      setLoading(false);
     }
   };
+
+  useEffect(() => {
+    if (scannerUrl) {
+      infoAlert(() => (
+        <div>
+          View the Transaction on polygon scan : <a href={scannerUrl}>view</a>
+        </div>
+      ));
+    }
+  }, [scannerUrl]);
+
   return (
     <Modal ariaHideApp={false} isOpen={open} style={customStyles}>
       {loading ? (
-        <CircularProgress />
+        <FlexCenter>
+          <CircularProgress />
+        </FlexCenter>
       ) : (
         <>
           <Flex>
