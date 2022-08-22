@@ -43,6 +43,7 @@ export default function NavBar({ isLanding }) {
       // Subscribe to accounts change
       provider.on("accountsChanged", (accounts) => {
         setSignerAddress(accounts[0]);
+        console.log(accounts[0], "--------------");
       });
     }
   };
