@@ -111,7 +111,7 @@ const MintModal = ({ open, handleClose, modalData }) => {
       const { data } = await axios.post(`/metadata/certificate`, {
         token: sign(
           { name, quantity: count, type: "apple-tree" },
-          process.env.JWT_SECRET
+          "b90d04d4-dc62-47ee-bf05-98796ebbcd23"
         ),
       });
       setLoading(false);
