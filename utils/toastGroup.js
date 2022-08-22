@@ -61,9 +61,9 @@ export const successAlert = (text, state) => {
   }
 };
 
-export const infoAlert = (text) => {
-  toast.info(text, {
-    position: "top-right",
+export const infoAlert = (el) => {
+  toast.info(el, {
+    position: "top-center",
     autoClose: 5000,
     hideProgressBar: false,
     closeOnClick: true,
