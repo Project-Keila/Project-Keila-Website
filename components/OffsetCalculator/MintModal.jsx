@@ -118,8 +118,14 @@ const MintModal = ({ open, handleClose, modalData }) => {
       if (address && data) {
         setLoading(true);
         const mintData = await certificateContract.methods
-          .mint(data.metadata, web3.utils.toWei("200", "ether"))
-          .send({ from: address, value: web3.utils.toWei("200", "ether") });
+          .mint(
+            data.metadata,
+            web3.utils.toWei(`${200 * parseInt(count)}`, "ether")
+          )
+          .send({
+            from: address,
+            value: web3.utils.toWei(`${200 * parseInt(count)}`, "ether"),
+          });
         console.log(mintData);
         setScannerUrl(
           (prev) =>
